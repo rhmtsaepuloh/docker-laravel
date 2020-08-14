@@ -1,8 +1,5 @@
 FROM php:7.2-fpm-alpine
 
-# Copy composer.lock and composer.json
-COPY composer.lock composer.json /var/www/html
-
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
