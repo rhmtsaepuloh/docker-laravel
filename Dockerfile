@@ -1,7 +1,7 @@
 FROM php:7.2-fpm-alpine
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt update && apt install -y \
     build-essential \
     libpng-dev \
     libjpeg62-turbo-dev \
@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     curl
 
 # Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt clean && rm -rf /var/lib/apt/lists/*
 
 # Install extensions
 RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
